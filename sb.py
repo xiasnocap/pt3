@@ -10,29 +10,44 @@ import time, random, asyncio, timeit, sys, json, codecs, threading, glob, re, st
 
 print ("\nSELAMAT DATANG\n")
 
-client = LINE()
-#client = LINE(authToken="YOUR TOKEN")
-client.log("robertghanim582@icloud.com","36091vwz": {}".format(str(client.authToken)))
-channel = LINEChannel(client,client.server.CHANNEL_ID['LINE_TIMELINE'])
-client.log("CHANNEL TOKEN : " + str(channel.getChannelResult()))
 
-print ("LOGIN SUCCESS LINE")
+botStart = time.time()
+cl = LINE("robertghanim582@icloud.com","36091vwz")
+#cl = LINE("YOUR TOKEN")
+#cl = LINE("Email","Password")
 
-clientProfile = client.getProfile()
-clientSettings = client.getSettings()
-LINE = LINEPoll(client)
-call = client
-mid = [client]
-myMID = client.profile.mid
-Admin=[myMID]
-Owner=["u0dedae6e6ff204f52f2e4a096630ea82"]
-Team = Admin + mid + Owner
+cl.log("Auth Token : " + str(cl.authToken))
+channelToken = cl.getChannelResult()
+cl.log("Channel Token : " + str(channelToken))
+readOpen = codecs.open("read.json","r","utf-8")
+settingsOpen = codecs.open("temp.json","r","utf-8")
 
-contact = client.getProfile()
-backup = client.getProfile()
-backup.displayName = contact.displayName
-backup.statusMessage = contact.statusMessage
-backup.pictureStatus = contact.pictureStatus
+clMID = cl.profile.mid
+clProfile = cl.getProfile()
+clSettings = cl.getSettings()
+oepoll = OEPoll(cl)
+call = cl
+read = json.load(readOpen)
+settings = json.load(settingsOpen)
+
+connect1 = 'CHROME'
+Headers1 = {
+        'User-Agent': "Line/9.22.1",
+        'X-Line-Application': "CROMEOS\t2.1.5ARIFISTIFIK\t11.2.5",
+        "x-lal": "ja-US_US",
+    }
+connect2 = 'WIN'
+Headers2 = {
+        'User-Agent': "Line/9.22.1",
+        'X-Line-Application': "DESKTOPWIN\t5.5.5ARIFISTIFIK\t11.2.5",
+        "x-lal": "ja-US_US",
+    }
+connect3 = 'ios'
+Headers3 = {
+        'User-Agent': "Line/9.22.1",
+        'X-Line-Application': "IOSIPAD\t8.14.2\tiPhone OS\t11.2.5",
+        "x-lal": "ja-US_US",
+    }
 
 Connect_to = {
     "UnsendMessage":False,
