@@ -12,7 +12,7 @@ print ("\nSELAMAT DATANG\n")
 
 client = LINE()
 #client = LINE(authToken="YOUR TOKEN")
-client.log("YOUR TOKEN : {}".format(str(client.authToken)))
+client.log("robertghanim582@icloud.com","36091vwz": {}".format(str(client.authToken)))
 channel = LINEChannel(client,client.server.CHANNEL_ID['LINE_TIMELINE'])
 client.log("CHANNEL TOKEN : " + str(channel.getChannelResult()))
 
@@ -25,7 +25,7 @@ call = client
 mid = [client]
 myMID = client.profile.mid
 Admin=[myMID]
-Owner=["ud296655acef67cbd5e8208e63629f78b"]
+Owner=["u0dedae6e6ff204f52f2e4a096630ea82"]
 Team = Admin + mid + Owner
 
 contact = client.getProfile()
