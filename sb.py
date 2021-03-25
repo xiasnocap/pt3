@@ -18,8 +18,8 @@ cl = LINE("robertghanim582@icloud.com","36091vwz")
 
 cl.log("Auth Token : " + str(cl.authToken))
 channelToken = cl.getChannelResult()
-cl.log("Channel Token : " + str(channelToken))
 readOpen = codecs.open("read.json","r","utf-8")
+cl.log("Channel Token : " + str(channelToken))
 settingsOpen = codecs.open("temp.json","r","utf-8")
 
 clMID = cl.profile.mid
